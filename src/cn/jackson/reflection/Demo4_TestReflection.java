@@ -30,10 +30,20 @@ public class Demo4_TestReflection{
 			if(m.getName().equals("mm")){
 				//Method方法通过invoke进行调用，此方法为可变参数方法
 				m.invoke(o,1);
+				//可以获取方法的参数类型
+				for(Class paraType : m.getParameterTypes()){
+					System.out.println(paraType.getName());
+				}
 			}
 			if(m.getName().equals("m1")){
 				//Method方法通过invoke进行调用，此方法为可变参数方法
 				m.invoke(o);
+				
+			}
+			if(m.getName().equals("getS")){
+				//可以获取方法的返回类型
+				Class returnType = m.getReturnType();
+				System.out.println(returnType.getName());
 			}
 		}
 	}
